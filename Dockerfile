@@ -20,15 +20,15 @@ RUN apt-get install -y python3-pyqt5 python3.7-dev
 RUN python3.7 -m pip install pip
 RUN python3.7 -m pip install SIP pyQt5
 RUN python3.7 -m pip install --upgrade PyQt5
-COPY *.txt /usr/local/predict-system/
-RUN python3.7 -m pip install -r /usr/local/predict-system/requirements.txt
+COPY *.txt /home/qtuser/predict-system/
+RUN python3.7 -m pip install -r /home/qtuser/predict-system/requirements.txt
 
 # Add user for user Pyqt5
 RUN adduser --quiet --disabled-password qtuser
 
 # Copy python code
-COPY * /usr/local/predict-system/
+COPY * /home/qtuser/predict-system/
 
 # Change work directory
-WORKDIR "/home/qtuser"
+WORKDIR "/home/qtuser/predict-system"
 
