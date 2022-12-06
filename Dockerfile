@@ -28,7 +28,7 @@ RUN adduser --quiet --disabled-password qtuser
 
 # Copy python code
 COPY * /home/qtuser/predict-system/
-
+RUN chmod -R 777 /home/qtuser
 # Change work directory
 WORKDIR "/home/qtuser/predict-system"
 
